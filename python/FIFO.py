@@ -34,9 +34,23 @@ class FIFO:
         else:
             self.overflow = True
 
+    def read(self):
+        item = self.mem[self.rd_ptr]
+
+        if self.rd_ptr != self.wr_ptr:
+            self.rd_ptr += 1
+            if self.rd_ptr >= self.length:
+                self.rd_ptr = 0
+        else:
+            self.underflow = True
+
+        return item
+
 
     def dump(self):
         print (self.mem)
+        print ("wr_ptr: ", self.wr_ptr)
+        print ("rd_ptr: ", self.rd_ptr)
 
 
 
@@ -47,8 +61,18 @@ if __name__ == "__main__":
 
     f = FIFO(4)
     
+
+'''
     for i in range(5):
         x = random.randint(1,100)
         f.write(x)
+        f.dump()
 
-    f.dump()
+    
+
+    for i in range(5):
+        x = f.read()
+        print ("read() returned: ", x)
+        f.dump()
+
+    '''
