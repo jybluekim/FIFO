@@ -43,24 +43,57 @@ class FIFO:
                 self.rd_ptr = 0
         else:
             self.underflow = True
+            item = None
 
         return item
 
 
+    def reset_underflow(self):
+        self.underflow = False
+
+    def reset_overflow(self):
+        self.overflow = False
+
+
     def dump(self):
+        print ("=============")
         print (self.mem)
         print ("wr_ptr: ", self.wr_ptr)
         print ("rd_ptr: ", self.rd_ptr)
-
-
+        print ("overflow: ", self.overflow)
+        print ("underflow: ", self.underflow)
+        print ("=============")
 
 
 if __name__ == "__main__":
 
     import random 
 
-    f = FIFO(4)
+    f = FIFO(3)
     
+
+    for i in range (20):
+        r_w = random.randint(1,3)
+        if r_w == 1: # read
+            r = f.read()
+            if r == None and f.underflow:
+                print ("Reading.. Underflow occured!!")
+                f.reset_underflow()
+            else:
+                print ("Reading...", r)
+    
+        else:
+            wv = random.randint(1,100)
+            f.write(wv)
+            if f.overflow:
+                print ("Writing... Overflow occurred!!")
+                f.reset_overflow()
+            else:
+                print ("Writing...", wv)
+
+        f.dump()
+
+
 
 '''
     for i in range(5):
