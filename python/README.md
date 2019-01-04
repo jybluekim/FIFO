@@ -3,7 +3,7 @@ Circular FIFO implementation in Python
 
 How to run
 
->> python FIFO.py
+> python FIFO.py
 
 If you want to change the depth of FIFO, please change the number given to the instantiation. 
 

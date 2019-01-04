@@ -1,6 +1,11 @@
 In init function
 In reset function
-Reading.. Underflow occured!!
+Testing a FIFO with the following parameters
+FIFO size:  8
+Number of transactions:  30
+#### Reading....
+#### Underflow occured!!
+Current number of items in the FIFO:  0
 =============
 [None, None, None, None, None, None, None, None]
 wr_ptr:  0
@@ -8,155 +13,293 @@ rd_ptr:  0
 overflow:  False
 underflow:  False
 =============
-Writing... 57
+#### Writing.... 88
+Writing success!...
+Current number of items in the FIFO:  1
 =============
-[57, None, None, None, None, None, None, None]
+[88, None, None, None, None, None, None, None]
 wr_ptr:  1
 rd_ptr:  0
 overflow:  False
 underflow:  False
 =============
-Writing... 60
+#### Reading....
+#### Read:  88
+Current number of items in the FIFO:  0
 =============
-[57, 60, None, None, None, None, None, None]
+[88, None, None, None, None, None, None, None]
+wr_ptr:  1
+rd_ptr:  1
+overflow:  False
+underflow:  False
+=============
+#### Reading....
+#### Underflow occured!!
+Current number of items in the FIFO:  0
+=============
+[88, None, None, None, None, None, None, None]
+wr_ptr:  1
+rd_ptr:  1
+overflow:  False
+underflow:  False
+=============
+#### Reading....
+#### Underflow occured!!
+Current number of items in the FIFO:  0
+=============
+[88, None, None, None, None, None, None, None]
+wr_ptr:  1
+rd_ptr:  1
+overflow:  False
+underflow:  False
+=============
+#### Writing.... 30
+Writing success!...
+Current number of items in the FIFO:  1
+=============
+[88, 30, None, None, None, None, None, None]
 wr_ptr:  2
-rd_ptr:  0
+rd_ptr:  1
 overflow:  False
 underflow:  False
 =============
-Writing... 33
+#### Writing.... 51
+Writing success!...
+Current number of items in the FIFO:  2
 =============
-[57, 60, 33, None, None, None, None, None]
+[88, 30, 51, None, None, None, None, None]
 wr_ptr:  3
-rd_ptr:  0
+rd_ptr:  1
 overflow:  False
 underflow:  False
 =============
-Writing... 39
+#### Writing.... 80
+Writing success!...
+Current number of items in the FIFO:  3
 =============
-[57, 60, 33, 39, None, None, None, None]
+[88, 30, 51, 80, None, None, None, None]
 wr_ptr:  4
-rd_ptr:  0
+rd_ptr:  1
 overflow:  False
 underflow:  False
 =============
-Writing... 67
+#### Writing.... 88
+Writing success!...
+Current number of items in the FIFO:  4
 =============
-[57, 60, 33, 39, 67, None, None, None]
+[88, 30, 51, 80, 88, None, None, None]
 wr_ptr:  5
-rd_ptr:  0
+rd_ptr:  1
 overflow:  False
 underflow:  False
 =============
-Writing... 7
+#### Writing.... 90
+Writing success!...
+Current number of items in the FIFO:  5
 =============
-[57, 60, 33, 39, 67, 7, None, None]
+[88, 30, 51, 80, 88, 90, None, None]
 wr_ptr:  6
-rd_ptr:  0
+rd_ptr:  1
 overflow:  False
 underflow:  False
 =============
-Writing... 89
+#### Writing.... 22
+Writing success!...
+Current number of items in the FIFO:  6
 =============
-[57, 60, 33, 39, 67, 7, 89, None]
-wr_ptr:  7
-rd_ptr:  0
-overflow:  False
-underflow:  False
-=============
-Writing... Overflow occurred!!
-=============
-[57, 60, 33, 39, 67, 7, 89, None]
-wr_ptr:  7
-rd_ptr:  0
-overflow:  False
-underflow:  False
-=============
-Reading... 57
-=============
-[57, 60, 33, 39, 67, 7, 89, None]
+[88, 30, 51, 80, 88, 90, 22, None]
 wr_ptr:  7
 rd_ptr:  1
 overflow:  False
 underflow:  False
 =============
-Writing... 5
+#### Writing.... 12
+Writing success!...
+Current number of items in the FIFO:  7
 =============
-[57, 60, 33, 39, 67, 7, 89, 5]
+[88, 30, 51, 80, 88, 90, 22, 12]
 wr_ptr:  0
 rd_ptr:  1
 overflow:  False
 underflow:  False
 =============
-Writing... Overflow occurred!!
+#### Writing.... 31
+#### Overflow occurred!!
+Current number of items in the FIFO:  7
 =============
-[57, 60, 33, 39, 67, 7, 89, 5]
+[88, 30, 51, 80, 88, 90, 22, 12]
 wr_ptr:  0
 rd_ptr:  1
 overflow:  False
 underflow:  False
 =============
-Reading... 60
+#### Writing.... 81
+#### Overflow occurred!!
+Current number of items in the FIFO:  7
 =============
-[57, 60, 33, 39, 67, 7, 89, 5]
+[88, 30, 51, 80, 88, 90, 22, 12]
+wr_ptr:  0
+rd_ptr:  1
+overflow:  False
+underflow:  False
+=============
+#### Writing.... 70
+#### Overflow occurred!!
+Current number of items in the FIFO:  7
+=============
+[88, 30, 51, 80, 88, 90, 22, 12]
+wr_ptr:  0
+rd_ptr:  1
+overflow:  False
+underflow:  False
+=============
+#### Writing.... 100
+#### Overflow occurred!!
+Current number of items in the FIFO:  7
+=============
+[88, 30, 51, 80, 88, 90, 22, 12]
+wr_ptr:  0
+rd_ptr:  1
+overflow:  False
+underflow:  False
+=============
+#### Writing.... 6
+#### Overflow occurred!!
+Current number of items in the FIFO:  7
+=============
+[88, 30, 51, 80, 88, 90, 22, 12]
+wr_ptr:  0
+rd_ptr:  1
+overflow:  False
+underflow:  False
+=============
+#### Reading....
+#### Read:  30
+Current number of items in the FIFO:  6
+=============
+[88, 30, 51, 80, 88, 90, 22, 12]
 wr_ptr:  0
 rd_ptr:  2
 overflow:  False
 underflow:  False
 =============
-Writing... 68
+#### Writing.... 62
+Writing success!...
+Current number of items in the FIFO:  7
 =============
-[68, 60, 33, 39, 67, 7, 89, 5]
+[62, 30, 51, 80, 88, 90, 22, 12]
 wr_ptr:  1
 rd_ptr:  2
 overflow:  False
 underflow:  False
 =============
-Writing... Overflow occurred!!
+#### Writing.... 64
+#### Overflow occurred!!
+Current number of items in the FIFO:  7
 =============
-[68, 60, 33, 39, 67, 7, 89, 5]
+[62, 30, 51, 80, 88, 90, 22, 12]
 wr_ptr:  1
 rd_ptr:  2
 overflow:  False
 underflow:  False
 =============
-Reading... 33
+#### Reading....
+#### Read:  51
+Current number of items in the FIFO:  6
 =============
-[68, 60, 33, 39, 67, 7, 89, 5]
+[62, 30, 51, 80, 88, 90, 22, 12]
 wr_ptr:  1
 rd_ptr:  3
 overflow:  False
 underflow:  False
 =============
-Reading... 39
+#### Reading....
+#### Read:  80
+Current number of items in the FIFO:  5
 =============
-[68, 60, 33, 39, 67, 7, 89, 5]
+[62, 30, 51, 80, 88, 90, 22, 12]
 wr_ptr:  1
 rd_ptr:  4
 overflow:  False
 underflow:  False
 =============
-Writing... 52
+#### Writing.... 65
+Writing success!...
+Current number of items in the FIFO:  6
 =============
-[68, 52, 33, 39, 67, 7, 89, 5]
+[62, 65, 51, 80, 88, 90, 22, 12]
 wr_ptr:  2
 rd_ptr:  4
 overflow:  False
 underflow:  False
 =============
-Writing... 66
+#### Reading....
+#### Read:  88
+Current number of items in the FIFO:  5
 =============
-[68, 52, 66, 39, 67, 7, 89, 5]
-wr_ptr:  3
-rd_ptr:  4
+[62, 65, 51, 80, 88, 90, 22, 12]
+wr_ptr:  2
+rd_ptr:  5
 overflow:  False
 underflow:  False
 =============
-Writing... Overflow occurred!!
+#### Reading....
+#### Read:  90
+Current number of items in the FIFO:  4
 =============
-[68, 52, 66, 39, 67, 7, 89, 5]
+[62, 65, 51, 80, 88, 90, 22, 12]
+wr_ptr:  2
+rd_ptr:  6
+overflow:  False
+underflow:  False
+=============
+#### Reading....
+#### Read:  22
+Current number of items in the FIFO:  3
+=============
+[62, 65, 51, 80, 88, 90, 22, 12]
+wr_ptr:  2
+rd_ptr:  7
+overflow:  False
+underflow:  False
+=============
+#### Writing.... 55
+Writing success!...
+Current number of items in the FIFO:  4
+=============
+[62, 65, 55, 80, 88, 90, 22, 12]
 wr_ptr:  3
-rd_ptr:  4
+rd_ptr:  7
+overflow:  False
+underflow:  False
+=============
+#### Reading....
+#### Read:  12
+Current number of items in the FIFO:  3
+=============
+[62, 65, 55, 80, 88, 90, 22, 12]
+wr_ptr:  3
+rd_ptr:  0
+overflow:  False
+underflow:  False
+=============
+#### Writing.... 47
+Writing success!...
+Current number of items in the FIFO:  4
+=============
+[62, 65, 55, 47, 88, 90, 22, 12]
+wr_ptr:  4
+rd_ptr:  0
+overflow:  False
+underflow:  False
+=============
+#### Writing.... 69
+Writing success!...
+Current number of items in the FIFO:  5
+=============
+[62, 65, 55, 47, 69, 90, 22, 12]
+wr_ptr:  5
+rd_ptr:  0
 overflow:  False
 underflow:  False
 =============

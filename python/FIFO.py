@@ -76,28 +76,38 @@ if __name__ == "__main__":
 
     import random 
 
+    FIFO_SIZE = 8
+    NUM_TRANSACTIONS = 30
 
-    f = FIFO(8)
+
+    f = FIFO(FIFO_SIZE)
     
+  
+    print ("Testing a FIFO with the following parameters")
+    print ("FIFO size: ", FIFO_SIZE)
+    print ("Number of transactions: ", NUM_TRANSACTIONS)
 
-    for i in range (20):
+    for i in range (NUM_TRANSACTIONS):
         r_w = random.randint(1,3)
         if r_w == 1: # read
             r = f.read()
+            print ("#### Reading....")
             if r == None and f.underflow:
-                print ("Reading.. Underflow occured!!")
+                print ("#### Underflow occured!!")
                 f.reset_underflow()
             else:
-                print ("Reading...", r)
+                print ("#### Read: ", r)
     
         else:
             wv = random.randint(1,100)
             f.write(wv)
+
+            print ("#### Writing....", wv)
             if f.overflow:
-                print ("Writing...", wv, ".. Overflow occurred!!")
+                print ("#### Overflow occurred!!")
                 f.reset_overflow()
             else:
-                print ("Writing...", wv)
+                print ("Writing success!...")
 
         print ("Current number of items in the FIFO: ", f.count())
         f.dump()
