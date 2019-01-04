@@ -9,7 +9,7 @@ class FIFO:
         if self.DEBUG: print ("In init function")
         self.overflow = False
         self.underflow = False
-        self.length = 1 << length # for input 5, we have 1 << 5 = 2^5 = 32
+        self.length = length 
 
         self.mem = [ None for i in range (self.length) ]
         self.reset()
@@ -55,13 +55,20 @@ class FIFO:
         self.overflow = False
 
 
+    def count(self):
+        ret = self.wr_ptr - self.rd_ptr
+        if ret < 0:
+            ret = self.length + ret
+
+        return ret
+
     def dump(self):
         print ("=============")
         print (self.mem)
         print ("wr_ptr: ", self.wr_ptr)
         print ("rd_ptr: ", self.rd_ptr)
         print ("overflow: ", self.overflow)
-        print ("underflow: ", self.underflow)
+        print ("underflow: ", self.underflow)        
         print ("=============")
 
 
@@ -69,7 +76,8 @@ if __name__ == "__main__":
 
     import random 
 
-    f = FIFO(3)
+
+    f = FIFO(8)
     
 
     for i in range (20):
@@ -86,26 +94,13 @@ if __name__ == "__main__":
             wv = random.randint(1,100)
             f.write(wv)
             if f.overflow:
-                print ("Writing... Overflow occurred!!")
+                print ("Writing...", wv, ".. Overflow occurred!!")
                 f.reset_overflow()
             else:
                 print ("Writing...", wv)
 
+        print ("Current number of items in the FIFO: ", f.count())
         f.dump()
 
 
-
-'''
-    for i in range(5):
-        x = random.randint(1,100)
-        f.write(x)
-        f.dump()
-
-    
-
-    for i in range(5):
-        x = f.read()
-        print ("read() returned: ", x)
-        f.dump()
-
-    '''
+ 
